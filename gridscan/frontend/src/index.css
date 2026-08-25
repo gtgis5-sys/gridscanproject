@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: oklch(16% 0.025 250);
+    --foreground: oklch(96% 0.01 240);
+    --card: oklch(21% 0.03 250);
+    --card-foreground: oklch(96% 0.01 240);
+    --popover: oklch(21% 0.03 250);
+    --popover-foreground: oklch(96% 0.01 240);
+    --primary: oklch(72% 0.19 235);
+    --primary-foreground: oklch(12% 0.03 250);
+    --secondary: oklch(26% 0.03 250);
+    --secondary-foreground: oklch(96% 0.01 240);
+    --muted: oklch(24% 0.025 250);
+    --muted-foreground: oklch(70% 0.02 245);
+    --accent: oklch(30% 0.05 235);
+    --accent-foreground: oklch(96% 0.01 240);
+    --destructive: oklch(65% 0.22 25);
+    --destructive-foreground: oklch(98% 0.01 240);
+    --border: oklch(30% 0.03 245 / 0.6);
+    --input: oklch(30% 0.03 245 / 0.6);
+    --ring: oklch(72% 0.19 235);
+    --chart-1: oklch(72% 0.19 235);
+    --chart-2: oklch(78% 0.16 180);
+    --chart-3: oklch(68% 0.18 145);
+    --chart-4: oklch(78% 0.17 80);
+    --chart-5: oklch(70% 0.2 320);
+    --sidebar: oklch(18% 0.03 250);
+    --sidebar-foreground: oklch(96% 0.01 240);
+    --sidebar-primary: oklch(72% 0.19 235);
+    --sidebar-primary-foreground: oklch(12% 0.03 250);
+    --sidebar-accent: oklch(26% 0.03 250);
+    --sidebar-accent-foreground: oklch(96% 0.01 240);
+    --sidebar-border: oklch(30% 0.03 245 / 0.6);
+    --sidebar-ring: oklch(72% 0.19 235);
+    --electric: oklch(72% 0.19 235);
+    --electric-glow: oklch(82% 0.17 220);
+    --grid: oklch(30% 0.03 245 / 0.4);
+    --gradient-electric: linear-gradient(135deg, oklch(72% 0.19 235), oklch(78% 0.16 200));
+    --gradient-hero: radial-gradient(ellipse at top, oklch(30% 0.1 235 / 0.6), transparent 70%),
+      linear-gradient(180deg, oklch(18% 0.03 250), oklch(14% 0.025 250));
+    --shadow-glow: 0 0 40px oklch(72% 0.19 235 / 0.35);
+    --shadow-card: 0 8px 30px oklch(5% 0.02 250 / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html,
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 24px oklch(72% 0.19 235 / 0.6);
+  }
+  .glow-ring {
+    box-shadow: var(--shadow-glow);
+  }
+  .bg-grid {
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .animate-pulse-glow {
+    animation: 2.6s ease-in-out infinite pulse-glow;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
